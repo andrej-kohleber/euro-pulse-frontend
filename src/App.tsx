@@ -1,27 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
+import { HomePage } from './pages/Home/HomePage';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {/* Временная навигация для теста */}
+        <nav style={{ padding: '20px', background: '#f5f5f5' }}>
+          <Link to="/" style={{ marginRight: '15px' }}>🏠 Главная</Link>
+          <Link to="/news" style={{ marginRight: '15px' }}>📰 Новости</Link>
+          <Link to="/article/1">📄 Статья 1</Link>
+        </nav>
+        
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
