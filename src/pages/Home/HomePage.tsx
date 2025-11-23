@@ -1,31 +1,43 @@
 // src/pages/Home/HomePage.tsx
 import React from 'react';
+import styles from './HomePage.module.css';
 
 export const HomePage = () => {
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>🇪🇺 Euro Pulse - Главная</h1>
-      <p>Добро пожаловать в европейский новостной журнал!</p>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>🇪🇺 Euro Pulse - Главная</h1>
+        <p className={styles.subtitle}>
+          Добро пожаловать в европейский новостной журнал! 
+          Актуальные новости, аналитика и события из стран Евросоюза.
+        </p>
+      </header>
       
-      <section style={{ marginTop: '30px' }}>
-        <h2>Последние новости из Европы</h2>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '20px',
-          marginTop: '20px'
-        }}>
-          <div style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px' }}>
-            <h3>Новость 1</h3>
-            <p>Здесь будет краткое описание новости из Европы...</p>
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>Последние новости из Европы</h2>
+        <div className={styles.newsGrid}>
+          <div className={styles.newsCard}>
+            <h3 className={styles.newsTitle}>Экономический рост еврозоны</h3>
+            <p className={styles.newsDescription}>
+              Основные индексы демонстрируют положительную динамику 
+              на фоне улучшения экономических показателей...
+            </p>
           </div>
-          <div style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px' }}>
-            <h3>Новость 2</h3>
-            <p>Еще одна важная новость европейского масштаба...</p>
+          
+          <div className={styles.newsCard}>
+            <h3 className={styles.newsTitle}>Новые регуляции ЕС в сфере AI</h3>
+            <p className={styles.newsDescription}>
+              Европейский парламент утвердил новые правила 
+              регулирования искусственного интеллекта...
+            </p>
           </div>
-          <div style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px' }}>
-            <h3>Новость 3</h3>
-            <p>Актуальные события из Брюсселя и других столиц ЕС...</p>
+          
+          <div className={styles.newsCard}>
+            <h3 className={styles.newsTitle}>Климатические инициативы</h3>
+            <p className={styles.newsDescription}>
+              Страны ЕС договорились о новых мерах по сокращению 
+              выбросов углекислого газа к 2030 году...
+            </p>
           </div>
         </div>
       </section>
